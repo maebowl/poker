@@ -1,0 +1,23 @@
+# Render Blueprint — deploys this folder as an always-on Node web service.
+# In Render: New + → "Blueprint" → pick this repo, and it reads this file.
+# (Render injects PORT automatically; server.js already honors process.env.PORT.)
+services:
+  - type: web
+    name: poker
+    env: node
+    plan: starter        # "free" also works but sleeps when idle (slow cold start,
+                          # drops WebSockets). "starter" (~$7/mo) stays always-on.
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      # Optional TURN relay for voice on restrictive networks (see README):
+      # - key: TURN_URL
+      #   sync: false
+      # - key: TURN_USERNAME
+      #   sync: false
+      # - key: TURN_CREDENTIAL
+      #   sync: false

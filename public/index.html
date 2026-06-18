@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>♠ Poker — mabelwallin.com</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Join screen -->
+  <div id="join" class="overlay">
+    <div class="card-panel">
+      <h1>♠ ♥ Poker ♦ ♣</h1>
+      <p class="sub">Texas Hold'em with voice chat. Play money — just for fun.</p>
+      <label>Your name
+        <input id="name-input" maxlength="20" placeholder="e.g. Mabel" autocomplete="off" />
+      </label>
+      <label>Table code
+        <input id="table-input" maxlength="12" placeholder="e.g. FRIDAY" autocomplete="off" />
+      </label>
+      <button id="join-btn" class="primary">Join table</button>
+      <p class="hint">Share the table code (or this page's link) so friends land at the same table.</p>
+    </div>
+  </div>
+
+  <!-- Table screen -->
+  <div id="table-view" class="hidden">
+    <header id="topbar">
+      <div class="brand">♠ Poker</div>
+      <div class="table-id">Table <strong id="table-code">—</strong>
+        <button id="share-btn" class="ghost" title="Copy invite link">Copy invite</button>
+      </div>
+      <div class="controls">
+        <button id="voice-btn" class="ghost">🎙️ Voice off</button>
+        <button id="leave-btn" class="ghost">Leave</button>
+      </div>
+    </header>
+
+    <main id="table-wrap">
+      <div id="felt">
+        <div id="board">
+          <div id="community"></div>
+          <div id="pot" class="hidden"></div>
+          <div id="status"></div>
+        </div>
+        <div id="seats"></div>
+      </div>
+    </main>
+
+    <div id="action-bar" class="hidden"></div>
+
+    <div id="toast"></div>
+
+    <aside id="chat">
+      <div id="chat-log"></div>
+      <form id="chat-form">
+        <input id="chat-input" maxlength="300" placeholder="Say something…" autocomplete="off" />
+      </form>
+    </aside>
+  </div>
+
+  <!-- Hidden container for remote voice audio elements -->
+  <div id="audio-sinks" style="display:none"></div>
+
+  <script src="voice.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

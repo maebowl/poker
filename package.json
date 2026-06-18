@@ -1,0 +1,19 @@
+{
+  "name": "poker-table",
+  "version": "1.0.0",
+  "description": "Texas Hold'em with WebRTC voice chat. Server-authoritative game engine; play-money ephemeral tables joined by a code.",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "poker-ts": "^1.1.4",
+    "ws": "^8.18.0"
+  }
+}
