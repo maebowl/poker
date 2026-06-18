@@ -6,7 +6,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "engines": {
     "node": ">=18"
@@ -15,5 +17,8 @@
     "express": "^4.19.2",
     "poker-ts": "^1.1.4",
     "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.101.0"
   }
 }
