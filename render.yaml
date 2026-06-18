@@ -5,8 +5,8 @@ services:
   - type: web
     name: poker
     env: node
-    plan: starter        # "free" also works but sleeps when idle (slow cold start,
-                          # drops WebSockets). "starter" (~$7/mo) stays always-on.
+    plan: free           # free sleeps after ~15 min idle (30-60s cold start on the
+                          # next visit). Change to "starter" (~$7/mo) for always-on.
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /health
